@@ -69,7 +69,3 @@
 
 
 ---
-**作者**
- Data Acquisition                张东娟 曹琼
- Information Classification           豆明宣
- Visualization                  付小康  仇雅倩
