@@ -4,8 +4,8 @@
   <meta charset=utf-8 />
   <title></title>
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
   <style>
       
     body { margin:0; padding:0; }
@@ -80,7 +80,7 @@ top: 0;
 bottom: 0;
 left: 0;
 font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-background-color: #fff;
+background-color: #fff0;
 max-height: 100%;
 overflow: hidden;
 }
@@ -148,7 +148,7 @@ background: #f0f0f0;
     
     
     
-    <style>
+ <style>
 .legend label,
 .legend span {
   display:block;
@@ -216,8 +216,7 @@ background: #f0f0f0;
     
     
 <script>
-L.mapbox.accessToken = 'pk.eyJ1Ijoid3liZXJ0IiwiYSI6Ik9WNGtlaEEifQ.xSQ8zVV5GcMouyl_ervEOQ';
-    
+L.mapbox.accessToken = 'pk.eyJ1Ijoid3liZXJ0IiwiYSI6ImNrYjk0bnpkdjBhczAycm84OWczMGFseDcifQ.icmgMlugfJ8erQ-JKmovWQ';
     
 //L.mapbox.map('map', 'examples.map-zr0njcqy');
     
@@ -229,9 +228,11 @@ L.mapbox.accessToken = 'pk.eyJ1Ijoid3liZXJ0IiwiYSI6Ik9WNGtlaEEifQ.xSQ8zVV5GcMouy
   map.legendControl.addLegend(document.getElementById('legend').innerHTML);
     
 
+ 
+// var map = L.mapbox.map('map', 'mapbox.streets')
+// .setView([40,116.4], 10);
 
-
-    
+//  map.legendControl.addLegend(document.getElementById('legend').innerHTML);
     
     
     
@@ -240,8 +241,8 @@ L.mapbox.accessToken = 'pk.eyJ1Ijoid3liZXJ0IiwiYSI6Ik9WNGtlaEEifQ.xSQ8zVV5GcMouy
    
     
   var layers = {
-      Streets: L.mapbox.tileLayer('wybert.lhp9nme9')
-    //   Satellite: L.mapbox.tileLayer('satellite-v8')
+      Streets: L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'),
+      Satellite: L.mapbox.styleLayer('mapbox://styles/wybert/ck6n3tcyf0n4i1jn3mk26hsll')
   };
 
 
@@ -256,10 +257,6 @@ var myLayer = L.mapbox.featureLayer()
     // .loadURL ("tets.geojson")
     .addTo(map);
 
-    
-    
-    
-    
     
     
 $.getJSON( "pic_geo.json" , function (data) {
